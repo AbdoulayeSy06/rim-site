@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RIM Industries Services — Innovation Technologique & Industrielle</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1a7a3a;
+  --green2: #25a855;
+  --green-light: #e8f5ee;
+  --red: #c0392b;
+  --red-light: #fdf0ee;
+  --yellow: #e6a817;
+  --yellow-light: #fef9e7;
+  --blue: #1565c0;
+  --blue2: #1e88e5;
+  --blue-light: #e3f0fd;
+  --dark: #0d1f12;
+  --text: #1a2e1e;
+  --text2: #4a6357;
+  --bg: #ffffff;
+  --bg2: #f7faf8;
+  --border: rgba(26,122,58,0.15);
+  --shadow: 0 4px 24px rgba(26,122,58,0.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.7;}
+
+/* FLAG STRIPE */
+.flag-stripe{display:flex;height:5px;width:100%;position:fixed;top:0;left:0;z-index:300;}
+.flag-stripe div{flex:1;}
+
+/* NAV */
+nav{position:fixed;top:5px;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:12px 5%;background:rgba(255,255,255,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);box-shadow:0 2px 16px rgba(26,122,58,0.06);}
+.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.logo-img{width:46px;height:46px;object-fit:contain;border-radius:8px;}
+.logo-text{font-family:'Syne',sans-serif;font-weight:800;font-size:.95rem;line-height:1.2;color:var(--dark);}
+.logo-text span{color:var(--text2);display:block;font-size:.65rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{color:var(--text2);text-decoration:none;font-size:.88rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:var(--green);}
+.nav-cta{background:var(--green)!important;color:#fff!important;padding:9px 22px;border-radius:8px;font-weight:600!important;}
+.nav-cta:hover{background:var(--green2)!important;}
+
+/* HERO */
+.hero{min-height:100vh;padding:130px 5% 90px;display:flex;align-items:center;position:relative;overflow:hidden;background:linear-gradient(140deg,#f0fff6 0%,#eaf2ff 60%,#fff8e8 100%);}
+.shape{position:absolute;border-radius:50%;filter:blur(80px);opacity:.15;pointer-events:none;}
+.s1{width:500px;height:500px;background:var(--green);top:-120px;right:-80px;}
+.s2{width:320px;height:320px;background:var(--blue);bottom:-60px;left:-40px;}
+.s3{width:180px;height:180px;background:var(--yellow);top:35%;right:22%;}
+.s4{width:160px;height:160px;background:var(--red);bottom:15%;right:38%;}
+.hero-inner{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%;max-width:1200px;margin:0 auto;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,122,58,0.1);border:1px solid rgba(26,122,58,0.25);color:var(--green);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:22px;}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:800;line-height:1.1;margin-bottom:20px;color:var(--dark);}
+.hl-green{color:var(--green);}
+.hl-blue{color:var(--blue);}
+.hl-red{color:var(--red);}
+.hero-sub{font-size:1.02rem;color:var(--text2);max-width:520px;margin-bottom:36px;}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;}
+.btn-green{background:var(--green);color:#fff;padding:13px 28px;border-radius:8px;font-weight:700;font-size:.92rem;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(26,122,58,0.25);}
+.btn-green:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(26,122,58,0.35);}
+.btn-outline{border:2px solid var(--green);color:var(--green);padding:11px 28px;border-radius:8px;font-weight:600;font-size:.92rem;text-decoration:none;display:inline-block;transition:background .2s;}
+.btn-outline:hover{background:var(--green-light);}
+.hero-visual{display:flex;align-items:center;justify-content:center;}
+.hero-card{background:#fff;border-radius:24px;padding:36px 32px;box-shadow:0 20px 60px rgba(0,0,0,0.10);border:1px solid var(--border);text-align:center;max-width:320px;width:100%;position:relative;}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--green),var(--blue),var(--yellow),var(--red));border-radius:24px 24px 0 0;}
+.hero-logo-big{width:80px;height:80px;object-fit:contain;margin:0 auto 18px;display:block;border-radius:12px;}
+.hero-card h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--dark);margin-bottom:5px;}
+.hero-card .hc-sub{color:var(--text2);font-size:.82rem;margin-bottom:22px;}
+.vision-pills{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.pill{font-size:.72rem;font-weight:600;padding:5px 12px;border-radius:100px;border:1px solid;}
+.pill-g{background:var(--green-light);color:var(--green);border-color:rgba(26,122,58,0.3);}
+.pill-b{background:var(--blue-light);color:var(--blue);border-color:rgba(21,101,192,0.3);}
+.pill-r{background:var(--red-light);color:var(--red);border-color:rgba(192,57,43,0.3);}
+.pill-y{background:var(--yellow-light);color:#9a6f00;border-color:rgba(230,168,23,0.3);}
+
+/* SECTIONS */
+section{padding:90px 5%;}
+.container{max-width:1200px;margin:0 auto;}
+.section-tag{font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green);margin-bottom:10px;display:block;}
+h2{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3vw,2.4rem);font-weight:800;line-height:1.2;margin-bottom:14px;color:var(--dark);}
+.section-lead{color:var(--text2);font-size:.98rem;max-width:580px;margin-bottom:52px;}
+
+/* ACTIVITES */
+.activites{background:var(--bg2);}
+.activites-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px;}
+.act-card{background:#fff;border-radius:16px;border:1px solid var(--border);padding:30px 26px;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden;}
+.act-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);}
+.act-stripe{position:absolute;top:0;left:0;right:0;height:3px;}
+.act-icon{font-size:1.9rem;margin-bottom:14px;display:block;}
+.act-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.97rem;margin-bottom:8px;color:var(--dark);}
+.act-card p{color:var(--text2);font-size:.86rem;line-height:1.6;margin-bottom:16px;}
+.act-status{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:600;padding:4px 12px;border-radius:100px;}
+.status-active{background:var(--green-light);color:var(--green);}
+.status-coming{background:var(--blue-light);color:var(--blue);}
+.status-dot{width:6px;height:6px;border-radius:50%;background:currentColor;animation:blink 1.5s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* VISION */
+.vision-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.vision-text p{color:var(--text2);margin-bottom:16px;font-size:.96rem;}
+.roadmap{margin-top:30px;position:relative;}
+.roadmap::before{content:'';position:absolute;left:19px;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,var(--green),var(--blue),var(--red));}
+.rm-item{display:flex;gap:20px;align-items:flex-start;margin-bottom:26px;position:relative;}
+.rm-dot{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;flex-shrink:0;border:2px solid;}
+.rm-active{background:var(--green-light);color:var(--green);border-color:var(--green);}
+.rm-next{background:var(--blue-light);color:var(--blue);border-color:var(--blue);}
+.rm-future{background:#f5f5f5;color:#aaa;border-color:#ddd;}
+.rm-content strong{display:block;font-weight:600;margin-bottom:2px;font-size:.9rem;color:var(--dark);}
+.rm-content span{color:var(--text2);font-size:.82rem;}
+
+.vision-box{background:linear-gradient(135deg,var(--dark) 0%,#0f3020 100%);border-radius:20px;padding:44px 38px;color:#fff;position:relative;overflow:hidden;}
+.vision-box::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 80% 20%,rgba(37,168,85,0.2),transparent);pointer-events:none;}
+.vision-box h3{font-family:'Syne',sans-serif;font-weight:800;font-size:1.35rem;margin-bottom:6px;position:relative;}
+.vb-sub{color:rgba(255,255,255,0.45);font-size:.8rem;margin-bottom:26px;position:relative;display:block;}
+.vb-item{display:flex;align-items:center;gap:14px;margin-bottom:18px;position:relative;}
+.vb-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
+.vbi-g{background:rgba(37,168,85,0.2);}
+.vbi-b{background:rgba(30,136,229,0.2);}
+.vbi-r{background:rgba(192,57,43,0.2);}
+.vbi-y{background:rgba(230,168,23,0.2);}
+.vb-item strong{display:block;font-size:.88rem;margin-bottom:1px;}
+.vb-item span{color:rgba(255,255,255,0.45);font-size:.76rem;}
+
+/* TARIFS */
+.tarifs{background:var(--bg2);}
+.tarifs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:20px;}
+.tarif-card{background:#fff;border-radius:14px;border:1px solid var(--border);padding:30px 22px;text-align:center;transition:transform .3s,box-shadow .3s;}
+.tarif-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+.tarif-card.star{border:2px solid var(--green);background:linear-gradient(135deg,var(--green-light),#fff);}
+.tarif-card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:14px;color:var(--dark);}
+.tarif-num{font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;color:var(--green);}
+.tarif-freq{color:var(--text2);font-size:.76rem;margin-bottom:12px;display:block;}
+.tarif-card p{color:var(--text2);font-size:.83rem;line-height:1.5;}
+
+/* CONTACT */
+#contact{background:var(--bg2);}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;}
+.contact-info>p{color:var(--text2);margin-bottom:30px;}
+.contact-item{display:flex;align-items:center;gap:14px;margin-bottom:14px;color:var(--text2);font-size:.9rem;}
+.ci-icon{width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;}
+.social-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;}
+.soc-btn{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);color:var(--text);text-decoration:none;padding:9px 16px;border-radius:8px;font-size:.82rem;font-weight:500;transition:border-color .2s,background .2s;}
+.soc-btn:hover{border-color:var(--green);background:var(--green-light);color:var(--green);}
+.contact-form{display:flex;flex-direction:column;gap:14px;}
+label{font-size:.8rem;font-weight:500;color:var(--text2);margin-bottom:4px;display:block;}
+input,textarea,select{width:100%;background:#fff;border:1px solid var(--border);color:var(--text);padding:11px 15px;border-radius:8px;font-family:inherit;font-size:.92rem;transition:border-color .2s;outline:none;}
+input:focus,textarea:focus,select:focus{border-color:var(--green);}
+textarea{resize:vertical;min-height:110px;}
+.btn-submit{background:var(--green);color:#fff;border:none;padding:13px 28px;border-radius:8px;font-family:inherit;font-size:.95rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 4px 16px rgba(26,122,58,0.25);}
+.btn-submit:hover{transform:translateY(-2px);}
+
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,0.65);padding:40px 5%;}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;}
+.footer-logo-row{display:flex;align-items:center;gap:10px;}
+.footer-logo-img{width:34px;height:34px;object-fit:contain;border-radius:6px;}
+.footer-logo-txt{font-family:'Syne',sans-serif;font-weight:800;color:#fff;font-size:.92rem;}
+.footer-logo-txt span{color:var(--green2);}
+.footer-stripe{display:flex;gap:5px;margin-top:12px;}
+.fs-b{height:4px;width:22px;border-radius:2px;}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero-inner,.vision-inner,.contact-inner{grid-template-columns:1fr;gap:40px;}
+  .hero-visual{display:none;}
+  .nav-links{display:none;}
+  section{padding:70px 5%;}
+}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease;}
+.reveal.visible{opacity:1;transform:none;}
+</style>
+</head>
+<body>
+
+<!-- Flag stripe -->
+<div class="flag-stripe">
+  <div style="background:#1a7a3a"></div>
+  <div style="background:#e6a817"></div>
+  <div style="background:#c0392b"></div>
+  <div style="background:#1565c0"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo-wrap">
+    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAA8ADwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6QBpwNRK1PBoAkBp2ajBp2aAJAacDUYNKDQBJS5pgNLmgDMVqkVqqq1Sq1AFPxJcz22mB7aUws08MTSqoYoryKpYAgjIDdwRXnfjy+v7bUm0+z1Vri1a3b7RJLcYZD84ZcKVQnA6Y6ntXoPiSBrrw/qMKMqyNA5RmOArAZUn6ECvK7yXU7qJ7JNOutl9cSTLKbTLTE5YqWO0ADB+XjI6nqtOclGmnJ2V9bb9NNNdTlrYeriG4Uk72/ryO++GF7Nc6NJFcXU1w0LLs81gzKpHQnGchgw5z928B2gNedfDayk0m8+zXEga6ubZpZ4hIshhKynaGK8ZIkJ9zn0r0IGl0TStdLQ1oxcI8kndrTv8AiSA07NRg0uaDUw1aszXPEthoczZwXxl8y6JEYRc9GVT+rrwMnnpV1WqC906y1B4mvraKdoshPMXO3OCcfioP4CmrX1E79DEXx/pV9bXi2lvczrFZy3TiSMxo8a4yAT1JViRjPAOcViR363jkWnguWQspZYbre6E7VOBwY1GWPUgcHoflrf8AEWk3u3TP+EcWK2+zy7miVjFGRx97YVJAxjHI9VPGM/T/AAnr03kSar4gnjmijVcW88kis43kSYbAB3Mh24IwmOhrWMlFaGco8z1RJHdaxbSTqfsGgWG8PC4EMOY920blbJB5Dduu3rV3w1Za7dX1pfXXiCO8ht3kSZIXIR2zjGAADtHHfnmi38BabHbtAbm7MLCMMnyYOxtw5Klh82TgHBzyDXSaPpNjpAuPsERja4fzZSXLF2xjPJ/lSlNDUTXzRmog1OzWRoYANPDVBmnA0ATF3/gx+NM8u4c83GweirSA1IpNAEkVuB9+WVz7tVuMIvQVVQmpVJoAtBqXdUCk08sScnrQB//Z" alt="Logo RIM" class="logo-img">
+    <div class="logo-text">RIM Industries Services<span>Innovation · Industrie · Digital</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#activites">Activités</a></li>
+    <li><a href="#vision">Vision</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#contact" class="nav-cta">Nous contacter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="shape s1"></div>
+  <div class="shape s2"></div>
+  <div class="shape s3"></div>
+  <div class="shape s4"></div>
+  <div class="hero-inner container">
+    <div>
+      <div class="hero-badge">🇲🇷 Nouakchott, Mauritanie</div>
+      <h1><span class="hl-green">Technologie</span> &amp; <span class="hl-blue">Innovation</span><br>au service de <span class="hl-red">l'industrie</span></h1>
+      <p class="hero-sub">RIM Industries Services accompagne les entreprises mauritaniennes vers la digitalisation, l'automatisation et l'intelligence industrielle — aujourd'hui et demain.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-green">Demander un devis</a>
+        <a href="#activites" class="btn-outline">Nos services →</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAA8ADwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6QBpwNRK1PBoAkBp2ajBp2aAJAacDUYNKDQBJS5pgNLmgDMVqkVqqq1Sq1AFPxJcz22mB7aUws08MTSqoYoryKpYAgjIDdwRXnfjy+v7bUm0+z1Vri1a3b7RJLcYZD84ZcKVQnA6Y6ntXoPiSBrrw/qMKMqyNA5RmOArAZUn6ECvK7yXU7qJ7JNOutl9cSTLKbTLTE5YqWO0ADB+XjI6nqtOclGmnJ2V9bb9NNNdTlrYeriG4Uk72/ryO++GF7Nc6NJFcXU1w0LLs81gzKpHQnGchgw5z928B2gNedfDayk0m8+zXEga6ubZpZ4hIshhKynaGK8ZIkJ9zn0r0IGl0TStdLQ1oxcI8kndrTv8AiSA07NRg0uaDUw1aszXPEthoczZwXxl8y6JEYRc9GVT+rrwMnnpV1WqC906y1B4mvraKdoshPMXO3OCcfioP4CmrX1E79DEXx/pV9bXi2lvczrFZy3TiSMxo8a4yAT1JViRjPAOcViR363jkWnguWQspZYbre6E7VOBwY1GWPUgcHoflrf8AEWk3u3TP+EcWK2+zy7miVjFGRx97YVJAxjHI9VPGM/T/AAnr03kSar4gnjmijVcW88kis43kSYbAB3Mh24IwmOhrWMlFaGco8z1RJHdaxbSTqfsGgWG8PC4EMOY920blbJB5Dduu3rV3w1Za7dX1pfXXiCO8ht3kSZIXIR2zjGAADtHHfnmi38BabHbtAbm7MLCMMnyYOxtw5Klh82TgHBzyDXSaPpNjpAuPsERja4fzZSXLF2xjPJ/lSlNDUTXzRmog1OzWRoYANPDVBmnA0ATF3/gx+NM8u4c83GweirSA1IpNAEkVuB9+WVz7tVuMIvQVVQmpVJoAtBqXdUCk08sScnrQB//Z" alt="Logo" class="hero-logo-big">
+        <h3>RIM Industries Services</h3>
+        <p class="hc-sub">Digitalisation · Industrie · Robotique</p>
+        <div class="vision-pills">
+          <span class="pill pill-g">📊 Excel & VBA</span>
+          <span class="pill pill-b">🏭 Industrie</span>
+          <span class="pill pill-r">🤖 Robotique</span>
+          <span class="pill pill-y">🎓 Formations</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITÉS -->
+<section class="activites" id="activites">
+  <div class="container">
+    <span class="section-tag">Ce que nous faisons</span>
+    <h2>Nos activités & services</h2>
+    <p class="section-lead">Des solutions concrètes disponibles aujourd'hui, et une vision industrielle ambitieuse pour demain. Chaque service s'inscrit dans une trajectoire cohérente.</p>
+    <div class="activites-grid">
+      <div class="act-card reveal">
+        <div class="act-stripe" style="background:var(--green)"></div>
+        <span class="act-icon">📊</span>
+        <h3>Automatisation Excel & VBA</h3>
+        <p>Macros sur mesure, automatisation des tâches répétitives, gain de temps et réduction des erreurs pour vos équipes.</p>
+        <span class="act-status status-active"><span class="status-dot"></span> Disponible maintenant</span>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-stripe" style="background:var(--green)"></div>
+        <span class="act-icon">📈</span>
+        <h3>Tableaux de bord décisionnels</h3>
+        <p>Dashboards interactifs pour visualiser vos données en temps réel. Adaptés à votre secteur, sans abonnement.</p>
+        <span class="act-status status-active"><span class="status-dot"></span> Disponible maintenant</span>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-stripe" style="background:var(--yellow)"></div>
+        <span class="act-icon">🎓</span>
+        <h3>Formations professionnelles</h3>
+        <p>Excel, VBA, outils digitaux. Sessions adaptées aux PME, étudiants et institutions. Bientôt : formations en robotique.</p>
+        <span class="act-status status-active"><span class="status-dot"></span> Disponible maintenant</span>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-stripe" style="background:var(--green)"></div>
+        <span class="act-icon">🧩</span>
+        <h3>Templates & outils digitaux</h3>
+        <p>Modèles prêts à l'emploi : factures, gestion de stock, plannings RH, rapports. Téléchargeables et personnalisables.</p>
+        <span class="act-status status-active"><span class="status-dot"></span> Disponible maintenant</span>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-stripe" style="background:var(--blue)"></div>
+        <span class="act-icon">🏭</span>
+        <h3>Gestion industrielle intelligente</h3>
+        <p>Outils de gestion industrielle modernes : suivi de production, maintenance prédictive, optimisation des processus industriels.</p>
+        <span class="act-status status-coming">🔜 Prochainement</span>
+      </div>
+      <div class="act-card reveal">
+        <div class="act-stripe" style="background:var(--red)"></div>
+        <span class="act-icon">🤖</span>
+        <h3>Robotique & automatisation avancée</h3>
+        <p>Conception de robots, intégration de systèmes automatisés et formations spécialisées en robotique industrielle.</p>
+        <span class="act-status status-coming">🔜 Prochainement</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION -->
+<section id="vision">
+  <div class="container">
+    <div class="vision-inner">
+      <div class="vision-text">
+        <span class="section-tag">Notre trajectoire</span>
+        <h2>Une startup tech avec une grande vision</h2>
+        <p>RIM Industries Services n'est pas une simple société de conseil. C'est une startup technologique mauritanienne qui construit sa croissance étape par étape, avec un objectif clair : devenir un acteur de référence en innovation industrielle et en robotique en Mauritanie et en Afrique de l'Ouest.</p>
+        <p>Nous commençons par les solutions dont les entreprises ont besoin aujourd'hui — digitalisation, automatisation bureautique — pour financer et construire les solutions industrielles de demain. Une trajectoire continue, sans rupture.</p>
+        <div class="roadmap">
+          <div class="rm-item">
+            <div class="rm-dot rm-active">✓</div>
+            <div class="rm-content">
+              <strong>Phase 1 — Digitalisation (2026)</strong>
+              <span>Solutions Excel/VBA, formations, templates, sous-traitance technique</span>
+            </div>
+          </div>
+          <div class="rm-item">
+            <div class="rm-dot rm-next">2</div>
+            <div class="rm-content">
+              <strong>Phase 2 — Industrie intelligente (2027)</strong>
+              <span>Outils de gestion industrielle, dashboards avancés, IoT</span>
+            </div>
+          </div>
+          <div class="rm-item">
+            <div class="rm-dot rm-future">3</div>
+            <div class="rm-content">
+              <strong>Phase 3 — Robotique (2028–2029)</strong>
+              <span>Conception de robots, formations robotique, expansion régionale</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vision-box">
+        <h3>Pourquoi nous choisir ?</h3>
+        <span class="vb-sub">Nos piliers de différenciation</span>
+        <div class="vb-item">
+          <div class="vb-icon vbi-g">🎯</div>
+          <div><strong>Adapté au marché mauritanien</strong><span>Solutions pensées pour les PME locales, à faible coût</span></div>
+        </div>
+        <div class="vb-item">
+          <div class="vb-icon vbi-b">🔗</div>
+          <div><strong>Vision long terme cohérente</strong><span>Du digital vers l'industrie et la robotique, sans rupture</span></div>
+        </div>
+        <div class="vb-item">
+          <div class="vb-icon vbi-y">📚</div>
+          <div><strong>Transfert de compétences</strong><span>Formation et autonomisation des équipes locales</span></div>
+        </div>
+        <div class="vb-item">
+          <div class="vb-icon vbi-r">🚀</div>
+          <div><strong>Innovation continue</strong><span>Toujours à la pointe des technologies disponibles</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TARIFS -->
+<section class="tarifs" id="tarifs">
+  <div class="container">
+    <span class="section-tag">Investissement</span>
+    <h2>Tarifs clairs & accessibles</h2>
+    <p class="section-lead">Des prix adaptés aux réalités économiques mauritaniennes. Contactez-nous pour un devis personnalisé selon votre projet.</p>
+    <div class="tarifs-grid">
+      <div class="tarif-card star reveal">
+        <h3>📊 Projet Excel / VBA</h3>
+        <div class="tarif-num">100€</div>
+        <span class="tarif-freq">à partir de / projet</span>
+        <p>Automatisation, tableaux de bord, gestion de stock. Devis selon complexité.</p>
+      </div>
+      <div class="tarif-card reveal">
+        <h3>🎓 Formation</h3>
+        <div class="tarif-num">30€</div>
+        <span class="tarif-freq">par participant</span>
+        <p>Excel, VBA, outils digitaux. Groupes, entreprises et étudiants bienvenus.</p>
+      </div>
+      <div class="tarif-card reveal">
+        <h3>🤝 Sous-traitance</h3>
+        <div class="tarif-num">200€</div>
+        <span class="tarif-freq">à partir de / mois</span>
+        <p>Expertise technique mensuelle flexible selon vos projets en cours.</p>
+      </div>
+      <div class="tarif-card reveal">
+        <h3>🧩 Templates digitaux</h3>
+        <div class="tarif-num">10€</div>
+        <span class="tarif-freq">à partir de / template</span>
+        <p>Modèles prêts à l'emploi. Factures, RH, plannings et rapports.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <span class="section-tag">Travaillons ensemble</span>
+        <h2>Contactez-nous</h2>
+        <p>Un projet, une formation, une question ? Nous répondons rapidement. Ensemble, digitalisons et industrialisons la Mauritanie.</p>
+        <div class="contact-item">
+          <div class="ci-icon" style="background:var(--green-light)">📍</div>
+          <span>Nouakchott, Mauritanie</span>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon" style="background:var(--blue-light)">✉️</div>
+          <span>contact@rimindustries.mr</span>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon" style="background:var(--yellow-light)">📞</div>
+          <span>+222 XX XX XX XX</span>
+        </div>
+        <div class="social-grid">
+          <a href="#" class="soc-btn">📘 Facebook</a>
+          <a href="#" class="soc-btn">💼 LinkedIn</a>
+          <a href="#" class="soc-btn">💬 WhatsApp</a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div><label>Votre nom complet</label><input type="text" placeholder="Mohamed Ould Ahmed" required></div>
+        <div><label>Email ou téléphone</label><input type="text" placeholder="email@exemple.com ou +222..." required></div>
+        <div>
+          <label>Service souhaité</label>
+          <select>
+            <option>Automatisation Excel & VBA</option>
+            <option>Tableau de bord décisionnel</option>
+            <option>Formation professionnelle</option>
+            <option>Template digital</option>
+            <option>Sous-traitance technique</option>
+            <option>Gestion industrielle intelligente</option>
+            <option>Robotique (renseignements)</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div><label>Votre message</label><textarea placeholder="Décrivez votre besoin ou votre projet..."></textarea></div>
+        <button type="submit" class="btn-submit">Envoyer le message →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo-row">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/4QAiRXhpZgAATU0AKgAAAAgAAQESAAMAAAABAAEAAAAAAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAA8ADwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD6QBpwNRK1PBoAkBp2ajBp2aAJAacDUYNKDQBJS5pgNLmgDMVqkVqqq1Sq1AFPxJcz22mB7aUws08MTSqoYoryKpYAgjIDdwRXnfjy+v7bUm0+z1Vri1a3b7RJLcYZD84ZcKVQnA6Y6ntXoPiSBrrw/qMKMqyNA5RmOArAZUn6ECvK7yXU7qJ7JNOutl9cSTLKbTLTE5YqWO0ADB+XjI6nqtOclGmnJ2V9bb9NNNdTlrYeriG4Uk72/ryO++GF7Nc6NJFcXU1w0LLs81gzKpHQnGchgw5z928B2gNedfDayk0m8+zXEga6ubZpZ4hIshhKynaGK8ZIkJ9zn0r0IGl0TStdLQ1oxcI8kndrTv8AiSA07NRg0uaDUw1aszXPEthoczZwXxl8y6JEYRc9GVT+rrwMnnpV1WqC906y1B4mvraKdoshPMXO3OCcfioP4CmrX1E79DEXx/pV9bXi2lvczrFZy3TiSMxo8a4yAT1JViRjPAOcViR363jkWnguWQspZYbre6E7VOBwY1GWPUgcHoflrf8AEWk3u3TP+EcWK2+zy7miVjFGRx97YVJAxjHI9VPGM/T/AAnr03kSar4gnjmijVcW88kis43kSYbAB3Mh24IwmOhrWMlFaGco8z1RJHdaxbSTqfsGgWG8PC4EMOY920blbJB5Dduu3rV3w1Za7dX1pfXXiCO8ht3kSZIXIR2zjGAADtHHfnmi38BabHbtAbm7MLCMMnyYOxtw5Klh82TgHBzyDXSaPpNjpAuPsERja4fzZSXLF2xjPJ/lSlNDUTXzRmog1OzWRoYANPDVBmnA0ATF3/gx+NM8u4c83GweirSA1IpNAEkVuB9+WVz7tVuMIvQVVQmpVJoAtBqXdUCk08sScnrQB//Z" alt="logo" class="footer-logo-img">
+        <span class="footer-logo-txt">RIM <span>Industries</span> Services</span>
+      </div>
+      <div class="footer-stripe">
+        <div class="fs-b" style="background:#1a7a3a"></div>
+        <div class="fs-b" style="background:#e6a817"></div>
+        <div class="fs-b" style="background:#c0392b"></div>
+        <div class="fs-b" style="background:#1565c0"></div>
+      </div>
+    </div>
+    <p style="font-size:.82rem;text-align:center">© 2026 RIM Industries Services · Nouakchott, Mauritanie<br><span style="font-size:.75rem;color:rgba(255,255,255,0.35)">Digital · Industrie · Robotique · Innovation</span></p>
+    <div style="text-align:right;font-size:.82rem;line-height:2">
+      <div>📘 Facebook</div><div>💼 LinkedIn</div><div>💬 WhatsApp</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.btn-submit');
+  btn.textContent='✅ Message envoyé !';
+  btn.style.background='#059669';
+  setTimeout(()=>{btn.textContent='Envoyer le message →';btn.style.background='';e.target.reset();},3000);
+}
+const obs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{if(e.isIntersecting)setTimeout(()=>e.target.classList.add('visible'),i*90);});
+},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
